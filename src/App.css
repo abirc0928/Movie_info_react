@@ -1,0 +1,36 @@
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.movie-card {
+  transition: all 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: tr anslateY(-5px);
+}
+
+#movieInfo {
+  transition: all 0.5s ease-in-out;
+}
+
+#movieInfo.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+html {
+  scroll-padding-top: 100px;
+  /* Adds padding for all scroll-into-view behaviors */
+}
+
+:root {
+  transition: background-color 0.3s ease;
+}
