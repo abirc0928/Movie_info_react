@@ -1,31 +1,39 @@
-import React, { useState } from 'react'
-import Searchbar from './Searchbar'
-import MovieLIst from './MovieLIst'
-import MovieDetails from './MovieDetails'
+import React, { useEffect, useState } from 'react';
+import Searchbar from './Searchbar';
+import MovieList from './MovieList';
+import MovieDetails from './MovieDetails';
 
-const MovieSection = () => {
+const MovieSection = ({ pageCounter, setPageCounter, movieName, setMovieName, isMovieDetailsActive, setIsMovieDetailsActive, imdbID, setImdbID }) => {
 
-    const [pageCounter, setPageCounter] = useState(1)
-    const [movieName, setMovieName] = useState('batman')
+    useEffect(() => {
+        if (isMovieDetailsActive) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }, [isMovieDetailsActive, imdbID]);
 
-    console.log(pageCounter)
     return (
+
         <main className="flex-grow container mx-auto p-4">
-            <Searchbar />
+            <Searchbar setMovieName={setMovieName} setIsMovieDetailsActive={setIsMovieDetailsActive} />
+            {isMovieDetailsActive ? <MovieDetails imdbID={imdbID} /> : ""}
 
-            <MovieDetails />
-            <div id="loadingIndicator" className="hidden text-center py-12">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
-            </div>
+            <MovieList
+                page={pageCounter}
+                movieName={movieName}
+                setIsMovieDetailsActive={setIsMovieDetailsActive}
+                setImdbID={setImdbID}
+            />
 
-            <MovieLIst page={pageCounter} movieName={movieName}/>
             <div className="flex justify-center mt-8">
-                <button id="searchButton" className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded" onClick={() => setPageCounter(pageCounter + 1)}>
+                <button
+                    className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
+                    onClick={() => setPageCounter(pageCounter + 1)}
+                >
                     Show more
                 </button>
             </div>
         </main>
-    )
-}
+    );
+};
 
-export default MovieSection
+export default MovieSection;

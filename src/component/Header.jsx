@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Header = () => {
+const Header = ({ setMovieName, setPageCounter, setIsMovieDetailsActive }) => {
 
     // State to track dark mode
     const [darkMode, setDarkMode] = useState(
@@ -30,6 +30,11 @@ const Header = () => {
             <div className="container mx-auto flex items-center justify-between">
                 <h1
                     className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent cursor-pointer"
+                    onClick={() => {
+                        setMovieName("batman");
+                        setPageCounter(1);
+                        setIsMovieDetailsActive(false);
+                    }}
                 >
                     MovieInfo
                 </h1>

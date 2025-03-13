@@ -1,6 +1,14 @@
 import React from 'react'
 
-const Searchbar = () => {
+const Searchbar = ({ setMovieName, setIsMovieDetailsActive }) => {
+
+    const searchMovie = (event) => {
+        if (event.key === "Enter") {
+            setMovieName(event.target.value);
+            setIsMovieDetailsActive(false)
+        }
+    };
+
     return (
         <div className="max-w-4xl mx-auto text-center py-12">
             <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
@@ -15,6 +23,7 @@ const Searchbar = () => {
                     type="text"
                     className="w-full p-4 pl-6 pr-24 text-lg rounded-full glass-effect text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/50 dark:bg-black/20 shadow-xl"
                     placeholder="Search for movies..."
+                    onKeyDown={searchMovie}
                 />
                 <div id="searchSpinner" className="absolute right-20 top-5 hidden">
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
