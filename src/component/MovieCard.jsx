@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import myaxios from "../utils/myaxios";
 
-const MovieList = ({ movieName, page, setIsMovieDetailsActive, setImdbID }) => {
+const MovieCard = ({ movieName, page, setIsMovieDetailsActive, setImdbID }) => {
     const [movies, setMovies] = useState([]); // Store movie list
     const [loading, setLoading] = useState(true);
 
@@ -54,4 +54,4 @@ const MovieList = ({ movieName, page, setIsMovieDetailsActive, setImdbID }) => {
     );
 };
 
-export default MovieList;
+export default MovieCard;

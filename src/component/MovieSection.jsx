@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Searchbar from './Searchbar';
-import MovieList from './MovieList';
 import MovieDetails from './MovieDetails';
+import MovieCard from './MovieCard';
 
 const MovieSection = ({ pageCounter, setPageCounter, movieName, setMovieName, isMovieDetailsActive, setIsMovieDetailsActive, imdbID, setImdbID }) => {
 
@@ -17,7 +17,7 @@ const MovieSection = ({ pageCounter, setPageCounter, movieName, setMovieName, is
             <Searchbar setMovieName={setMovieName} setIsMovieDetailsActive={setIsMovieDetailsActive} />
             {isMovieDetailsActive ? <MovieDetails imdbID={imdbID} /> : ""}
 
-            <MovieList
+            <MovieCard
                 page={pageCounter}
                 movieName={movieName}
                 setIsMovieDetailsActive={setIsMovieDetailsActive}
