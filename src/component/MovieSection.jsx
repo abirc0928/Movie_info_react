@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Searchbar from './Searchbar';
-import MovieList from './MovieList';
+// import MovieList from './MovieList';
 import MovieDetails from './MovieDetails';
 
 const MovieSection = ({ pageCounter, setPageCounter, movieName, setMovieName, isMovieDetailsActive, setIsMovieDetailsActive, imdbID, setImdbID }) => {
