@@ -7,7 +7,7 @@ const MovieSection = ({ pageCounter, setPageCounter, movieName, setMovieName, is
 
     useEffect(() => {
         if (isMovieDetailsActive) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 120, behavior: 'smooth' });
         }
     }, [isMovieDetailsActive, imdbID]);
 
