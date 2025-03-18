@@ -8,7 +8,8 @@ Welcome to the **Movie Info Site**, a web application that provides detailed mov
 
 - 🔍 Search for movies and TV shows  
 - 📜 View detailed movie information (title, release date, rating, overview, etc.)  
-- 🖼️ Browse movie posters and backdrops  
+- 🖼️ Browse movie posters and backdrops
+- 🌙 **Dark Mode / Light Mode Toggle** 
 - 🌟 Responsive design using Tailwind CSS  
 
 ## 🛠 Tech Stack
